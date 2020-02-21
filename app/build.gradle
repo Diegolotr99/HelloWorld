@@ -11,6 +11,7 @@ android {
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.priorityzones.helloworld"
+        manifestPlaceholders = [ appLabel: "@string/app_name" ]
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
