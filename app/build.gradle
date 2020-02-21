@@ -17,8 +17,31 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-common.pro', 'proguard-debug.pro'
+        }
+    }
+    flavorDimensions "version"
+    productFlavors {
+        dev {
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            manifestPlaceholders = [ appLabel: "HelloWorld - Dev" ]
+        }
+
+        staging {
+            applicationIdSuffix ".staging"
+            versionNameSuffix "-staging"
+            manifestPlaceholders = [ appLabel: "HelloWorld - Staging" ]
+        }
+
+        prod {
+            manifestPlaceholders = [ appLabel: "HelloWorld" ]
         }
     }
     compileOptions {
