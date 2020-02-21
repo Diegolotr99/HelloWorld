@@ -38,7 +38,6 @@ allprojects {
     }
 
     ext {
-
         androidLibs = [
                 appcompat           : 'androidx.appcompat:appcompat:1.1.0',
                 recyclerview        : 'androidx.recyclerview:recyclerview:1.0.0',
